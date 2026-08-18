@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Icon from "../components/Icon.astro";
+import { SITE } from "../lib/blog-data.js";
+import { CONTACT, FORMS } from "../config/theme.config.ts";
+
+const hasContactEndpoint = Boolean(FORMS.contact.action);
+const contactAction = hasContactEndpoint ? FORMS.contact.action : "/contact";
+const contactMethod = hasContactEndpoint ? FORMS.contact.method : "get";
+const contactEnctype = hasContactEndpoint ? FORMS.contact.enctype : undefined;
+---
+
+<BaseLayout
+  title={`Contact - ${SITE.name}`}
+  description={`Get in touch with ${SITE.name}.`}
+  canonical="/contact"
+>
+  <div class="mx-auto max-w-3xl px-5 py-12">
+    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Contact" }]} />
+
+    <header class="mt-6">
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Contact</div>
+      <h1 class="mt-2 font-serif text-5xl font-semibold">Say hello.</h1>
+      <p class="mt-4 max-w-xl text-muted-foreground">
+        Notes, corrections, pitches, or just a thought. We read everything and reply to most of it.
+      </p>
+    </header>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_240px]">
+      <form
+        action={contactAction}
+        method={contactMethod}
+        enctype={contactEnctype}
+        class="space-y-5"
+      >
+        <div>
+          <label for="name" class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Name</label>
+          <input id="name" name="name" autocomplete="name" required class="mt-2 w-full border-0 border-b border-input bg-transparent py-2 text-base outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label for="email" class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required class="mt-2 w-full border-0 border-b border-input bg-transparent py-2 text-base outline-none focus:border-primary" />
+        </div>
+        <div>
+          <label for="message" class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Message</label>
+          <textarea id="message" name="message" required rows="6" class="mt-2 w-full border-0 border-b border-input bg-transparent py-2 text-base outline-none focus:border-primary"></textarea>
+        </div>
+        <button type="submit" class="rounded-md bg-foreground px-6 py-2.5 text-sm font-medium text-background hover:opacity-90">
+          Send
+        </button>
+      </form>
+
+      <aside class="space-y-6 border-l border-border pl-8 lg:block">
+        <div>
+          <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Elsewhere</div>
+          <ul class="mt-3 space-y-3 text-sm">
+            <li><a href={`mailto:${CONTACT.email}`} class="flex items-center gap-2 hover:text-primary"><Icon name="mail" class="h-3.5 w-3.5" /> {CONTACT.email}</a></li>
+            <li><a href={CONTACT.socialUrl} class="flex items-center gap-2 hover:text-primary"><Icon name="twitter" class="h-3.5 w-3.5" /> {CONTACT.socialHandle}</a></li>
+            <li><a href="/rss.xml" class="flex items-center gap-2 hover:text-primary"><Icon name="rss" class="h-3.5 w-3.5" /> RSS feed</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Pitches</div>
+          <p class="mt-2 text-sm text-muted-foreground">We commission essays from new contributors a few times a year. Send a short paragraph about what you'd like to write.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

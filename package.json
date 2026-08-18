@@ -1,21 +1,24 @@
 {
   "name": "perdido-no-mato",
+  "version": "2.2.0",
+  "description": "A quiet Astro magazine theme for essays, field notes, and long-form writing.",
+  "private": true,
+  "license": "MIT",
   "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/prune-unused-assets.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.6",
-    "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.2.3",
-    "sharp": "^0.35.0"
+    "@astrojs/mdx": "^7.0.0",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^7.0.4",
+    "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "vite": "^8.1.2"
   }
 }

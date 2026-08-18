@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Elena March initials">
+  <rect width="200" height="200" rx="100" fill="#f3e7dc"/>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#b88068" stroke-width="2"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700" fill="#5f3429">EM</text>
+</svg>
