@@ -4,7 +4,7 @@ import Icon from "./Icon.astro";
 const { items = [] } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
+<nav aria-label="Trilha de navegação" class="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
   {
     items.map((item, index) => (
       <span class="flex items-center gap-1">

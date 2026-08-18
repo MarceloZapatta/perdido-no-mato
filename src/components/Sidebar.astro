@@ -22,7 +22,7 @@ const author = authors[0];
   </div>
 
   <div>
-    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Categories</div>
+    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Categorias</div>
     <ul class="mt-3 space-y-2 text-sm">
       {
         categories.map((category) => (
@@ -37,14 +37,14 @@ const author = authors[0];
   </div>
 
   <div>
-    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Popular</div>
+    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Populares</div>
     <div class="mt-3 space-y-4">
       {popular.map((post) => <PostCard post={post} variant="compact" />)}
     </div>
   </div>
 
   <div>
-    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Recent</div>
+    <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Recentes</div>
     <div class="mt-3 space-y-4">
       {recent.map((post) => <PostCard post={post} variant="compact" />)}
     </div>
@@ -69,6 +69,6 @@ const author = authors[0];
   <Newsletter compact />
 
   <a href="/rss.xml" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-    <Icon name="rss" class="h-3.5 w-3.5" /> Subscribe via RSS
+    <Icon name="rss" class="h-3.5 w-3.5" /> Assinar via RSS
   </a>
 </aside>

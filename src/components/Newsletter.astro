@@ -12,14 +12,14 @@ const newsletterEnctype = hasNewsletterEndpoint ? FORMS.newsletter.enctype : und
   compact ? (
     <div>
       <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Newsletter</div>
-      <p class="mt-2 text-sm text-muted-foreground">A short letter, once a fortnight. No noise.</p>
+      <p class="mt-2 text-sm text-muted-foreground">Uma carta curta a cada quinze dias. Sem ruído.</p>
       <form
         action={newsletterAction}
         method={newsletterMethod}
         enctype={newsletterEnctype}
         class="mt-3 flex gap-2"
       >
-        <label for="newsletter-email-compact" class="sr-only">Email address</label>
+        <label for="newsletter-email-compact" class="sr-only">Endereço de e-mail</label>
         <input
           id="newsletter-email-compact"
           name="email"
@@ -30,16 +30,16 @@ const newsletterEnctype = hasNewsletterEndpoint ? FORMS.newsletter.enctype : und
           class="min-w-0 flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary"
         />
         <button type="submit" class="rounded-md bg-foreground px-3 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90">
-          Join
+          Assinar
         </button>
       </form>
     </div>
   ) : (
     <section data-newsletter-cta class="border-t border-border/60 pt-16 pb-10">
       <div class="mx-auto max-w-2xl px-5 text-center">
-        <h2 class="font-serif text-3xl font-semibold sm:text-4xl">A quieter inbox.</h2>
+        <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Uma caixa de entrada mais calma.</h2>
         <p class="mt-3 text-muted-foreground">
-          One thoughtful letter every other Sunday &mdash; new essays, things worth reading, and the occasional photograph.
+          Uma carta cuidadosa a cada dois domingos &mdash; novos ensaios, leituras que valem a pena e uma fotografia de vez em quando.
         </p>
         <form
           action={newsletterAction}
@@ -47,7 +47,7 @@ const newsletterEnctype = hasNewsletterEndpoint ? FORMS.newsletter.enctype : und
           enctype={newsletterEnctype}
           class="mx-auto mt-6 flex max-w-md flex-col gap-2 sm:flex-row"
         >
-          <label for="newsletter-email" class="sr-only">Email address</label>
+          <label for="newsletter-email" class="sr-only">Endereço de e-mail</label>
           <input
             id="newsletter-email"
             name="email"
@@ -58,10 +58,10 @@ const newsletterEnctype = hasNewsletterEndpoint ? FORMS.newsletter.enctype : und
             class="min-w-0 flex-1 rounded-md border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
           />
           <button type="submit" class="rounded-md bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90">
-            Subscribe
+            Assinar
           </button>
         </form>
-        <p class="mt-3 text-xs text-muted-foreground">Free. Unsubscribe in one click.</p>
+        <p class="mt-3 text-xs text-muted-foreground">Grátis. Cancele a assinatura com um clique.</p>
       </div>
     </section>
   )

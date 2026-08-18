@@ -22,7 +22,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
 ---
 
 <BaseLayout
-  title={`${SITE.name} - Writing, design & the slow web`}
+  title={`${SITE.name} - Viagens, trilhas e aventuras`}
   description={SITE.description}
   canonical="/"
   flushFooter
@@ -56,26 +56,11 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
     <div class="relative mx-auto flex min-h-[calc(100svh-6rem)] max-w-6xl items-center px-5 py-20 sm:min-h-[680px] sm:py-24">
       <div class="max-w-4xl text-white drop-shadow-[0_1px_18px_rgba(0,0,0,0.28)]">
         <h1 class="font-serif text-[2.5rem] font-medium leading-[1.02] sm:text-6xl lg:text-7xl">
-        An independent magazine on
-          <span class="italic text-white"> writing</span>,
-          <span class="italic text-white"> design</span>, and the
-          <span class="italic text-white"> slow web</span>.
+        Viagens, trilhas e aventuras.
         </h1>
         <p class="mt-8 max-w-xl text-lg leading-relaxed text-white/86">
-          Essays, field notes, and conversations &mdash; published occasionally, edited carefully, and meant to be read in a single sitting.
+          Blog onde você vai encontrar um pouco sobre viagens onde estou explorando esse mundo.
         </p>
-        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <a
-            href={`/blog/${featured.slug}`}
-            class="group inline-flex items-center gap-2 border-b border-white pb-1 text-sm font-medium text-white hover:border-white/70 hover:text-white/82"
-          >
-            Begin with this issue's lead essay
-            <Icon name="arrow-right" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a href="/blog" class="text-sm text-white/76 hover:text-white">
-            Or browse the archive
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -83,11 +68,11 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
   <section class="border-b border-border/60">
     <div class="mx-auto max-w-6xl px-5 py-16">
       <div class="mb-6 flex items-center justify-between">
-        <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Featured</div>
-        <a href="/blog" class="text-xs text-muted-foreground hover:text-foreground">All writing &rarr;</a>
+        <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Destaque</div>
+        <a href="/blog" class="text-xs text-muted-foreground hover:text-foreground">Todos os textos &rarr;</a>
       </div>
       <article class="grid gap-10 lg:grid-cols-2">
-        <a href={`/blog/${featured.slug}`} class="group block" aria-label={`Read ${featured.title}`}>
+        <a href={`/blog/${featured.slug}`} class="group block" aria-label={`Ler ${featured.title}`}>
           <div class="aspect-[4/3] overflow-hidden rounded-md bg-muted">
             {
               featured.thumbnail && (
@@ -139,10 +124,10 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
                 </>
               )
             }
-            <span>{featured.readingTime} min read</span>
+            <span>{featured.readingTime} min de leitura</span>
           </div>
           <a href={`/blog/${featured.slug}`} class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
-            Read the essay <Icon name="arrow-right" class="h-3.5 w-3.5" />
+            Ler o texto <Icon name="arrow-right" class="h-3.5 w-3.5" />
           </a>
         </div>
       </article>
@@ -151,14 +136,14 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
 
   <section class="mx-auto max-w-6xl px-5 py-16" data-home-latest>
     <div class="flex flex-wrap items-center justify-between gap-4">
-      <h2 class="font-serif text-2xl font-semibold">Latest</h2>
+      <h2 class="font-serif text-2xl font-semibold">Mais recentes</h2>
       <div class="flex flex-wrap gap-2">
         <button
           type="button"
           data-home-filter=""
           class="rounded-full border px-3 py-1 text-xs transition-colors border-foreground bg-foreground text-background"
         >
-          All
+          Todos
         </button>
         {
           categories.map((category) => (
@@ -175,7 +160,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
     </div>
 
     <div data-home-empty class="mt-12 rounded-md border border-dashed border-border py-16 text-center text-muted-foreground" hidden>
-      Nothing here yet in this section.
+      Ainda não há nada nesta seção.
     </div>
 
     <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -184,7 +169,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
 
     <div class="mt-12 text-center">
       <a href="/blog" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted">
-        Browse the archive <Icon name="arrow-right" class="h-3.5 w-3.5" />
+        Ver o arquivo <Icon name="arrow-right" class="h-3.5 w-3.5" />
       </a>
     </div>
   </section>

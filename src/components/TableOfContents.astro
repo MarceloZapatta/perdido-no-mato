@@ -5,7 +5,7 @@ const { items = [] } = Astro.props;
 {
   items.length > 0 && (
     <div data-toc>
-      <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">On this page</div>
+      <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Navegar na página</div>
       <ul class="mt-3 space-y-2 border-l border-border">
         {items.map((item) => (
           <li data-toc-item class="relative" style={`padding-left: ${item.level === 3 ? 24 : 12}px`}>

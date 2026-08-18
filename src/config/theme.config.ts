@@ -7,22 +7,22 @@ const siteUrl = (
 export const SITE = {
   name: "Perdido no Mato",
   description:
-    "A quiet travel journal about getting lost outdoors, finding good paths, and paying attention to the places between destinations.",
+    "Um diário de viagens sobre se perder ao ar livre, encontrar bons caminhos e prestar atenção aos lugares entre os destinos.",
   url: siteUrl,
-  locale: "en-US",
-  language: "en",
+  locale: "pt-BR",
+  language: "pt-BR",
   repositoryUrl: "https://github.com/MarceloZapatta/perdido-no-mato",
 };
 
 export const NAVIGATION = [
-  { to: "/", label: "Home" },
-  { to: "/blog", label: "Writing" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Início" },
+  { to: "/blog", label: "Textos" },
+  { to: "/about", label: "Sobre" },
+  { to: "/contact", label: "Contato" },
 ];
 
 export const CONTACT = {
-  email: "hello@example.com",
+  email: "oi@perdidonomato.com",
   socialHandle: "@perdidonomato",
   socialUrl: "https://x.com/perdidonomato",
 };
@@ -41,54 +41,68 @@ export const FORMS = {
 };
 
 export const SOCIAL_LINKS = [
-  { href: "/rss.xml", label: "RSS feed", icon: "rss" },
-  { href: CONTACT.socialUrl, label: `${SITE.name} on X`, icon: "twitter" },
-  { href: SITE.repositoryUrl, label: `${SITE.name} on GitHub`, icon: "github" },
-  { href: `mailto:${CONTACT.email}`, label: "Email", icon: "mail" },
+  { href: "/rss.xml", label: "Feed RSS", icon: "rss" },
+  { href: CONTACT.socialUrl, label: `${SITE.name} no X`, icon: "twitter" },
+  { href: SITE.repositoryUrl, label: `${SITE.name} no GitHub`, icon: "github" },
+  { href: `mailto:${CONTACT.email}`, label: "E-mail", icon: "mail" },
 ];
 
 export const authors = [
   {
+    slug: "marcelo-zapatta",
+    name: "Marcelo Zapatta",
+    bio: "Viajante, trilheiro e explorador de lugares tranquilos.",
+    longBio:
+      "Marcelo escreve sobre viagens, trilhas, cachoeiras e os caminhos que fazem cada passeio valer a pena.",
+    avatar: "/avatars/elena-march.svg",
+  },
+  {
     slug: "elena-march",
     name: "Elena March",
-    bio: "Writer & editor covering design, craft, and slow technology.",
+    bio: "Escritora e editora sobre design, criação e tecnologia tranquila.",
     longBio:
-      "Elena March writes about the quiet edges of design and technology. Previously an editor at two small magazines, she now publishes essays and field notes from a desk overlooking the harbour.",
+      "Elena March escreve sobre os detalhes silenciosos do design e da tecnologia. Depois de editar duas pequenas revistas, hoje publica ensaios e diários de campo com vista para o mar.",
     avatar: "/avatars/elena-march.svg",
   },
   {
     slug: "samuel-okafor",
     name: "Samuel Okafor",
-    bio: "Software engineer with a soft spot for typography and the open web.",
+    bio: "Engenheiro de software apaixonado por tipografia e pela web aberta.",
     longBio:
-      "Samuel builds tools for writers and reads more than he ships. He believes the best interfaces are the ones you don't notice.",
+      "Samuel cria ferramentas para escritores e lê mais do que publica. Acredita que as melhores interfaces são aquelas que passam despercebidas.",
     avatar: "/avatars/samuel-okafor.svg",
   },
   {
     slug: "mira-iwasaki",
     name: "Mira Iwasaki",
-    bio: "Photographer and essayist based between Kyoto and Lisbon.",
+    bio: "Fotógrafa e ensaísta entre Kyoto e Lisboa.",
     longBio:
-      "Mira's work sits at the intersection of place, memory, and the everyday object. Her essays have appeared in a number of small but loved publications.",
+      "O trabalho de Mira está no encontro entre lugar, memória e objetos do cotidiano. Seus ensaios já apareceram em várias publicações pequenas e queridas.",
     avatar: "/avatars/mira-iwasaki.svg",
   },
 ];
 
 export const categories = [
-  { slug: "essays", name: "Essays" },
+  { slug: "essays", name: "Ensaios" },
   { slug: "design", name: "Design" },
-  { slug: "engineering", name: "Engineering" },
-  { slug: "field-notes", name: "Field Notes" },
-  { slug: "interviews", name: "Interviews" },
+  { slug: "engineering", name: "Tecnologia" },
+  { slug: "field-notes", name: "Diário de campo" },
+  { slug: "interviews", name: "Entrevistas" },
+  { slug: "cachoeiras", name: "Cachoeiras" },
 ];
 
 export const tags = [
-  { slug: "writing", name: "Writing" },
-  { slug: "typography", name: "Typography" },
-  { slug: "minimalism", name: "Minimalism" },
-  { slug: "tools", name: "Tools" },
-  { slug: "travel", name: "Travel" },
-  { slug: "process", name: "Process" },
+  { slug: "writing", name: "Escrita" },
+  { slug: "typography", name: "Tipografia" },
+  { slug: "minimalism", name: "Minimalismo" },
+  { slug: "tools", name: "Ferramentas" },
+  { slug: "travel", name: "Viagem" },
+  { slug: "process", name: "Processo" },
   { slug: "web", name: "Web" },
-  { slug: "books", name: "Books" },
+  { slug: "books", name: "Livros" },
+  { slug: "trilha", name: "Trilha" },
+  { slug: "viagem", name: "Viagem" },
+  { slug: "ilhabela", name: "Ilhabela" },
+  { slug: "cachoeira", name: "Cachoeira" },
+  { slug: "veloso", name: "Veloso" },
 ];

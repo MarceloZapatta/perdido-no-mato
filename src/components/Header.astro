@@ -23,7 +23,7 @@ const iconClass = isHome
       <span class={`font-serif text-xl font-semibold ${isHome ? "home-header-brand" : ""}`}>{SITE.name}</span>
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Navegação principal">
       {
         NAVIGATION.map((item) => {
           const exact = item.to === "/";
@@ -45,7 +45,7 @@ const iconClass = isHome
       <button
         type="button"
         data-search-toggle
-        aria-label="Search"
+        aria-label="Buscar"
         aria-controls="site-search"
         aria-expanded="false"
         class={iconClass}
@@ -54,7 +54,7 @@ const iconClass = isHome
       </button>
       <a
         href="/rss.xml"
-        aria-label="RSS feed"
+        aria-label="Feed RSS"
         class={`${iconClass} hidden sm:inline-flex`}
       >
         <Icon name="rss" class="h-4 w-4" />
@@ -62,7 +62,7 @@ const iconClass = isHome
       <button
         type="button"
         data-theme-toggle
-        aria-label="Toggle dark mode"
+        aria-label="Alternar modo escuro"
         class={iconClass}
       >
         <span data-theme-icon="moon"><Icon name="moon" class="h-4 w-4" /></span>
@@ -87,15 +87,15 @@ const iconClass = isHome
       <input
         data-search-input
         name="q"
-        aria-label="Search essays, field notes, interviews"
-        placeholder="Search essays, field notes, interviews..."
+        aria-label="Buscar ensaios, diários de campo e entrevistas"
+        placeholder="Buscar ensaios, diários de campo e entrevistas..."
         class="w-full border-0 bg-transparent py-2 font-serif text-lg outline-none placeholder:text-muted-foreground"
       />
     </form>
   </div>
 
   <div id="mobile-menu" data-menu-panel class="border-t border-border/60 bg-background text-foreground md:hidden" hidden>
-    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3" aria-label="Mobile navigation">
+    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3" aria-label="Navegação mobile">
       {
         NAVIGATION.map((item) => {
           const exact = item.to === "/";

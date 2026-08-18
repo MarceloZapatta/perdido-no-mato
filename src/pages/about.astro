@@ -5,37 +5,37 @@ import { SITE, authors } from "../lib/blog-data.js";
 ---
 
 <BaseLayout
-  title={`About - ${SITE.name}`}
-  description={`About ${SITE.name}: an independent magazine on writing, design, and the slow web.`}
+  title={`Sobre - ${SITE.name}`}
+  description={`Sobre ${SITE.name}: um diário independente de viagens e aventuras ao ar livre.`}
   canonical="/about"
 >
   <div class="mx-auto max-w-3xl px-5 py-12">
-    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
+    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Sobre" }]} />
 
     <header class="mt-6">
-      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">About</div>
+      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Sobre</div>
       <h1 class="mt-2 font-serif text-5xl font-semibold leading-[1.05]">
-        A quiet magazine for the open web.
+        Um diário tranquilo para quem gosta de sair pelo mundo.
       </h1>
     </header>
 
     <div class="prose-article mt-10">
       <p>
-        {SITE.name} began as a folder of notes, drafts, and half-finished essays &mdash; the kind of writing that doesn't survive the timeline. We started publishing it here because we wanted somewhere slower to read, and somewhere slower to write.
+        {SITE.name} começou como uma pasta de anotações, rascunhos e relatos de viagens &mdash; o tipo de história que se perde na velocidade das redes. Começamos a publicar aqui porque queríamos um lugar mais lento para ler e escrever.
       </p>
       <p>
-        The magazine is independent, occasional, and unsponsored. We publish when the work is ready and not before. There are no trackers, no pop-ups, and no infinite scroll. Just sentences, photographs, and the occasional conversation.
+        O blog é independente, eventual e sem patrocínio. Publicamos quando o relato está pronto, nunca antes. Sem rastreadores, pop-ups ou rolagem infinita. Apenas histórias, fotografias e boas conversas.
       </p>
-      <h2 id="what-we-publish">What we publish</h2>
+      <h2 id="what-we-publish">O que publicamos</h2>
       <p>
-        Essays on writing, design, and the craft of the web. Field notes from places we love. Interviews with people who make things with their hands. The occasional photograph, when one is worth printing.
+        Relatos de viagens, trilhas, cachoeiras e lugares que merecem ser descobertos. Dicas práticas para quem gosta de explorar com calma e atenção.
       </p>
-      <h2 id="who-we-are">Who we are</h2>
-      <p>A small editorial team, scattered across three time zones, who would rather be reading.</p>
+      <h2 id="who-we-are">Quem somos</h2>
+      <p>Uma pessoa curiosa, uma mochila pronta e muita vontade de conhecer o próximo caminho.</p>
     </div>
 
     <section class="mt-12 border-t border-border pt-10">
-      <h2 class="font-serif text-2xl font-semibold">Contributors</h2>
+      <h2 class="font-serif text-2xl font-semibold">Colaboradores</h2>
       <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           authors.map((author) => (

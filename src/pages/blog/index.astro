@@ -23,15 +23,15 @@ const tagOptions = tags
 ---
 
 <BaseLayout
-  title={`Archive - ${SITE.name}`}
-  description="Every essay, field note, and interview we've published. Search and filter by category or tag."
+  title={`Arquivo - ${SITE.name}`}
+  description="Todos os ensaios, diários de campo e entrevistas publicados. Busque e filtre por categoria ou tag."
   canonical="/blog"
 >
   <div class="mx-auto max-w-4xl px-5 py-12" data-archive>
-    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Archive" }]} />
-    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">The archive</h1>
+    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Arquivo" }]} />
+    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">O arquivo</h1>
     <p class="mt-3 max-w-xl text-muted-foreground">
-      Every piece we've published. {posts.length} essays, field notes, and interviews.
+      Tudo o que publicamos. {posts.length} textos entre ensaios, diários de campo e entrevistas.
     </p>
 
     <form data-archive-search class="mt-8 flex items-center gap-2 border-b border-border pb-2">
@@ -39,8 +39,8 @@ const tagOptions = tags
       <input
         data-archive-query
         name="q"
-        aria-label="Search the archive"
-        placeholder="Search the archive..."
+        aria-label="Buscar no arquivo"
+        placeholder="Buscar no arquivo..."
         class="w-full border-0 bg-transparent py-2 outline-none placeholder:text-muted-foreground"
       />
       <button
@@ -49,7 +49,7 @@ const tagOptions = tags
         class="text-xs text-muted-foreground hover:text-foreground"
         hidden
       >
-        Clear
+        Limpar
       </button>
     </form>
 
@@ -58,14 +58,14 @@ const tagOptions = tags
     <div class="relative mt-6 flex flex-wrap items-center gap-2" data-archive-filters>
       <details class="group relative" data-filter-menu>
         <summary class="filter-pill">
-          <span class="filter-pill-label">Category</span>
-          <span class="filter-pill-value" data-filter-label="cat">All</span>
+          <span class="filter-pill-label">Categoria</span>
+          <span class="filter-pill-value" data-filter-label="cat">Todas</span>
           <Icon name="chevron-down" class="h-3 w-3 transition-transform group-open:rotate-180" />
         </summary>
         {/* Links, so aria-current marks the selection - aria-pressed is button-only. */}
-        <nav class="filter-popover" aria-label="Filter by category">
+        <nav class="filter-popover" aria-label="Filtrar por categoria">
           <a href="/blog" class="facet" data-filter="cat" data-value="" aria-current="true">
-            <span class="facet-label">All categories</span>
+            <span class="facet-label">Todas as categorias</span>
             <span class="facet-count" data-facet-count>{posts.length}</span>
           </a>
           {
@@ -89,12 +89,12 @@ const tagOptions = tags
       <details class="group relative" data-filter-menu>
         <summary class="filter-pill">
           <span class="filter-pill-label">Tag</span>
-          <span class="filter-pill-value" data-filter-label="tag">Any</span>
+          <span class="filter-pill-value" data-filter-label="tag">Qualquer uma</span>
           <Icon name="chevron-down" class="h-3 w-3 transition-transform group-open:rotate-180" />
         </summary>
-        <nav class="filter-popover" aria-label="Filter by tag">
+        <nav class="filter-popover" aria-label="Filtrar por tag">
           <a href="/blog" class="facet" data-filter="tag" data-value="" aria-current="true">
-            <span class="facet-label">Any tag</span>
+            <span class="facet-label">Qualquer tag</span>
             <span class="facet-count" data-facet-count>{posts.length}</span>
           </a>
           {
@@ -110,14 +110,14 @@ const tagOptions = tags
         </nav>
       </details>
 
-      <button type="button" class="filter-reset" data-filter-reset hidden>Clear filters</button>
+      <button type="button" class="filter-reset" data-filter-reset hidden>Limpar filtros</button>
     </div>
 
     <div data-archive-count class="mt-6 text-sm text-muted-foreground"></div>
 
     <div data-archive-empty class="mt-12 rounded-md border border-dashed border-border py-20 text-center" hidden>
-      <div class="font-serif text-lg">No matches</div>
-      <p class="mt-2 text-sm text-muted-foreground">Try a different word, or clear the filters.</p>
+      <div class="font-serif text-lg">Nenhum resultado</div>
+      <p class="mt-2 text-sm text-muted-foreground">Tente outra palavra ou limpe os filtros.</p>
     </div>
 
     <div data-archive-list>
@@ -152,7 +152,7 @@ const tagOptions = tags
     const menus = [...archive.querySelectorAll("[data-filter-menu]")];
     const facets = [...archive.querySelectorAll("[data-filter]")];
     const reset = archive.querySelector("[data-filter-reset]");
-    const emptyLabels = { cat: "All", tag: "Any" };
+    const emptyLabels = { cat: "Todas", tag: "Qualquer uma" };
 
     /* An unknown value in the URL is dropped rather than emptying the list. */
     const knownValue = (key, value) =>
@@ -236,13 +236,13 @@ const tagOptions = tags
       cards.forEach((card) => (card.hidden = true));
       matches.slice(0, visibleCount).forEach((card) => (card.hidden = false));
 
-      count.textContent = `${matches.length} ${matches.length === 1 ? "result" : "results"}${state.q ? ` for "${state.q}"` : ""}`;
+      count.textContent = `${matches.length} ${matches.length === 1 ? "resultado" : "resultados"}${state.q ? ` para "${state.q}"` : ""}`;
       empty.hidden = matches.length > 0;
 
       const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
       moreWrap.hidden = visibleCount >= matches.length;
-      more.textContent = `Load more (${matches.length - visibleCount} remaining)`;
-      pageText.textContent = `Page ${state.page} of ${totalPages}`;
+      more.textContent = `Carregar mais (${matches.length - visibleCount} restantes)`;
+      pageText.textContent = `Página ${state.page} de ${totalPages}`;
 
       renderFacets(test);
     };

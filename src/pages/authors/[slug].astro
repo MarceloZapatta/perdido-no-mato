@@ -19,12 +19,12 @@ const list = await postsByAuthor(author.slug);
   ogImage={author.avatar}
 >
   <div class="mx-auto max-w-4xl px-5 py-12">
-    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Authors" }, { label: author.name }]} />
+    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Autores" }, { label: author.name }]} />
 
     <header class="mt-8 flex flex-col items-start gap-6 border-b border-border pb-10 sm:flex-row sm:items-center">
       <img src={author.avatar} alt="" width="96" height="96" class="h-24 w-24 rounded-full" />
       <div>
-        <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Author</div>
+        <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Autor</div>
         <h1 class="mt-2 font-serif text-4xl font-semibold">{author.name}</h1>
         <p class="mt-3 max-w-xl text-muted-foreground">{author.longBio}</p>
       </div>
@@ -32,7 +32,7 @@ const list = await postsByAuthor(author.slug);
 
     <section class="mt-2">
       <div class="mt-6 text-xs uppercase tracking-wider text-muted-foreground">
-        {list.length} {list.length === 1 ? "piece" : "pieces"} by {author.name.split(" ")[0]}
+        {list.length} {list.length === 1 ? "texto" : "textos"} de {author.name.split(" ")[0]}
       </div>
       {list.map((post) => <PostCard post={post} variant="list" />)}
     </section>
