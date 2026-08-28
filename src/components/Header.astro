@@ -20,6 +20,7 @@ const iconClass = isHome
 <header class={headerClass} data-home-header={isHome ? "true" : undefined} data-scrolled="false">
   <div class="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
     <a href="/" class="flex items-center gap-2">
+      <img src="/logo.svg" alt="" aria-hidden="true" class="h-6 w-7" />
       <span class={`font-serif text-xl font-semibold ${isHome ? "home-header-brand" : ""}`}>{SITE.name}</span>
     </a>
 

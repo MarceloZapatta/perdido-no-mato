@@ -40,12 +40,7 @@ export const FORMS = {
   },
 };
 
-export const SOCIAL_LINKS = [
-  { href: "/rss.xml", label: "Feed RSS", icon: "rss" },
-  { href: CONTACT.socialUrl, label: `${SITE.name} no X`, icon: "twitter" },
-  { href: SITE.repositoryUrl, label: `${SITE.name} no GitHub`, icon: "github" },
-  { href: `mailto:${CONTACT.email}`, label: "E-mail", icon: "mail" },
-];
+export const SOCIAL_LINKS = [{ href: "/rss.xml", label: "Feed RSS", icon: "rss" }];
 
 export const authors = [
   {

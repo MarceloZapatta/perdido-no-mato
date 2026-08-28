@@ -184,7 +184,8 @@ const jsonLd = {
         <div class="mt-8 flex items-center gap-2 border-y border-border py-4">
           <span class="text-xs uppercase tracking-wider text-muted-foreground">Compartilhar</span>
           <a target="_blank" rel="noreferrer" aria-label="Compartilhar no Twitter" data-share-twitter data-share-title={post.title} href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`} class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="twitter" class="h-3.5 w-3.5" /></a>
-          <a target="_blank" rel="noreferrer" aria-label="Compartilhar no LinkedIn" data-share-linkedin href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="linkedin" class="h-3.5 w-3.5" /></a>
+          <a target="_blank" rel="noreferrer" aria-label="Compartilhar no Facebook" data-share-facebook href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`} class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="facebook" class="h-3.5 w-3.5" /></a>
+          <a target="_blank" rel="noreferrer" aria-label="Compartilhar no Instagram" href="https://www.instagram.com/" class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground hover:text-primary"><Icon name="instagram" class="h-3.5 w-3.5" /></a>
           <button type="button" data-copy-link class="ml-auto inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground">
             <span data-copy-ready class="inline-flex items-center gap-2"><Icon name="copy" class="h-3.5 w-3.5" /> Copiar link</span>
             <span data-copy-done class="inline-flex items-center gap-2" hidden><Icon name="check" class="h-3.5 w-3.5" /> Copiado</span>
@@ -229,11 +230,30 @@ const jsonLd = {
           }
         </nav>
 
-        <div class="mt-12 rounded-md border border-dashed border-border p-8 text-center">
-          <Icon name="message" class="mx-auto h-5 w-5 text-muted-foreground" />
-          <div class="mt-2 font-serif text-lg">Comentários</div>
-          <p class="mt-1 text-sm text-muted-foreground">Conecte esta área à sua plataforma de comentários favorita &mdash; Giscus, Disqus ou outra.</p>
-        </div>
+        <section class="mt-12 border-t border-border pt-8">
+          <div class="flex items-center gap-2">
+            <Icon name="message" class="h-5 w-5 text-muted-foreground" />
+            <h2 class="font-serif text-2xl font-semibold">Comentários</h2>
+          </div>
+          <div class="mt-6">
+            <script
+              src="https://giscus.app/client.js"
+              data-repo="marcelozapatta/perdido-no-mato"
+              data-repo-id="R_kgDOT8zrdg"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOT8zrds4DEZ_8"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="noborder_light"
+              data-lang="pt"
+              crossorigin="anonymous"
+              async
+            ></script>
+          </div>
+        </section>
       </div>
 
       <aside class="hidden lg:block">
@@ -272,7 +292,7 @@ const jsonLd = {
   const copyIcon = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>';
   const checkIcon = '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>';
   const twitterShare = document.querySelector("[data-share-twitter]");
-  const linkedinShare = document.querySelector("[data-share-linkedin]");
+  const facebookShare = document.querySelector("[data-share-facebook]");
   const currentUrl = window.location.href;
 
   if (twitterShare) {
@@ -283,9 +303,9 @@ const jsonLd = {
     );
   }
 
-  linkedinShare?.setAttribute(
+  facebookShare?.setAttribute(
     "href",
-    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`,
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`,
   );
 
   const writeClipboard = async (text) => {
@@ -356,5 +376,26 @@ const jsonLd = {
         }, 1800);
       } catch (error) {}
     });
+  });
+
+  const giscusTheme = () =>
+    document.documentElement.classList.contains("dark") ? "noborder_dark" : "noborder_light";
+
+  const sendGiscusTheme = () => {
+    const frame = document.querySelector("iframe.giscus-frame");
+    if (!(frame instanceof HTMLIFrameElement) || !frame.contentWindow) return;
+    frame.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: giscusTheme() } } },
+      "https://giscus.app"
+    );
+  };
+
+  window.addEventListener("message", (event) => {
+    if (event.origin === "https://giscus.app" && event.data?.giscus) sendGiscusTheme();
+  });
+
+  new MutationObserver(sendGiscusTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
   });
 </script>

@@ -73,7 +73,7 @@
   --card-foreground: oklch(0.18 0.01 60);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.01 60);
-  --primary: oklch(0.55 0.16 30);
+  --primary: oklch(0.5 0.166 143);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.95 0.005 90);
   --secondary-foreground: oklch(0.2 0.01 60);
@@ -85,7 +85,7 @@
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.9 0.005 80);
   --input: oklch(0.9 0.005 80);
-  --ring: oklch(0.55 0.16 30);
+  --ring: oklch(0.5 0.166 143);
 }
 
 .dark {
@@ -95,7 +95,7 @@
   --card-foreground: oklch(0.95 0.005 80);
   --popover: oklch(0.2 0.005 80);
   --popover-foreground: oklch(0.95 0.005 80);
-  --primary: oklch(0.72 0.14 35);
+  --primary: oklch(0.72 0.15 143);
   --primary-foreground: oklch(0.16 0.005 80);
   --secondary: oklch(0.22 0.005 80);
   --secondary-foreground: oklch(0.95 0.005 80);
@@ -107,7 +107,7 @@
   --destructive-foreground: oklch(0.16 0.005 80);
   --border: oklch(0.28 0.005 80);
   --input: oklch(0.28 0.005 80);
-  --ring: oklch(0.72 0.14 35);
+  --ring: oklch(0.72 0.15 143);
 }
 
 @layer base {
@@ -452,13 +452,13 @@
   & code {
     font-family: var(--font-mono);
     font-size: 0.9em;
-    color: oklch(0.3 0.08 35);
+    color: oklch(0.3 0.08 143);
     background: oklch(0.95 0.012 85);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
   }
   .dark & code {
-    color: oklch(0.88 0.08 55);
+    color: oklch(0.88 0.08 143);
     background: oklch(0.23 0.006 80);
   }
   & .code-block {
