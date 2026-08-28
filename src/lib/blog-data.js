@@ -63,9 +63,14 @@ export const adjacentPosts = async (post) => {
   return { prev: sorted[index + 1], next: sorted[index - 1] };
 };
 
-export const formatDate = (iso) =>
-  new Date(iso).toLocaleDateString("pt-BR", {
+export const formatDate = (iso) => {
+  // Anchor date-only values (YYYY-MM-DD) to UTC-3 so they don't shift a day.
+  const value =
+    typeof iso === "string" && /^\d{4}-\d{2}-\d{2}$/.test(iso) ? `${iso}T00:00:00-03:00` : iso;
+  return new Date(value).toLocaleDateString("pt-BR", {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "America/Sao_Paulo",
   });
+};

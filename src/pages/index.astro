@@ -18,7 +18,8 @@ import {
 const featured = await featuredPost();
 const featuredAuthor = getAuthor(featured.author);
 const featuredCategory = getCategory(featured.category);
-const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slug);
+const all = await sortedPosts();
+const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug) : all;
 ---
 
 <BaseLayout
@@ -169,7 +170,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
 
     <div class="mt-12 text-center">
       <a href="/blog" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted">
-        Ver o arquivo <Icon name="arrow-right" class="h-3.5 w-3.5" />
+        Ver as publicações <Icon name="arrow-right" class="h-3.5 w-3.5" />
       </a>
     </div>
   </section>

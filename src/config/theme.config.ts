@@ -16,9 +16,9 @@ export const SITE = {
 
 export const NAVIGATION = [
   { to: "/", label: "Início" },
-  { to: "/blog", label: "Textos" },
+  { to: "/blog", label: "Blog" },
   { to: "/about", label: "Sobre" },
-  { to: "/contact", label: "Contato" },
+  // { to: "/contact", label: "Contato" },
 ];
 
 export const CONTACT = {
@@ -54,42 +54,11 @@ export const authors = [
     bio: "Viajante, trilheiro e explorador de lugares tranquilos.",
     longBio:
       "Marcelo escreve sobre viagens, trilhas, cachoeiras e os caminhos que fazem cada passeio valer a pena.",
-    avatar: "/avatars/elena-march.svg",
-  },
-  {
-    slug: "elena-march",
-    name: "Elena March",
-    bio: "Escritora e editora sobre design, criação e tecnologia tranquila.",
-    longBio:
-      "Elena March escreve sobre os detalhes silenciosos do design e da tecnologia. Depois de editar duas pequenas revistas, hoje publica ensaios e diários de campo com vista para o mar.",
-    avatar: "/avatars/elena-march.svg",
-  },
-  {
-    slug: "samuel-okafor",
-    name: "Samuel Okafor",
-    bio: "Engenheiro de software apaixonado por tipografia e pela web aberta.",
-    longBio:
-      "Samuel cria ferramentas para escritores e lê mais do que publica. Acredita que as melhores interfaces são aquelas que passam despercebidas.",
-    avatar: "/avatars/samuel-okafor.svg",
-  },
-  {
-    slug: "mira-iwasaki",
-    name: "Mira Iwasaki",
-    bio: "Fotógrafa e ensaísta entre Kyoto e Lisboa.",
-    longBio:
-      "O trabalho de Mira está no encontro entre lugar, memória e objetos do cotidiano. Seus ensaios já apareceram em várias publicações pequenas e queridas.",
-    avatar: "/avatars/mira-iwasaki.svg",
+    avatar: "/avatars/mz.png",
   },
 ];
 
-export const categories = [
-  { slug: "essays", name: "Ensaios" },
-  { slug: "design", name: "Design" },
-  { slug: "engineering", name: "Tecnologia" },
-  { slug: "field-notes", name: "Diário de campo" },
-  { slug: "interviews", name: "Entrevistas" },
-  { slug: "cachoeiras", name: "Cachoeiras" },
-];
+export const categories = [{ slug: "cachoeiras", name: "Cachoeiras" }];
 
 export const tags = [
   { slug: "writing", name: "Escrita" },

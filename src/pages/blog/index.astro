@@ -23,15 +23,15 @@ const tagOptions = tags
 ---
 
 <BaseLayout
-  title={`Arquivo - ${SITE.name}`}
+  title={`Postagens - ${SITE.name}`}
   description="Todos os ensaios, diários de campo e entrevistas publicados. Busque e filtre por categoria ou tag."
   canonical="/blog"
 >
   <div class="mx-auto max-w-4xl px-5 py-12" data-archive>
-    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Arquivo" }]} />
-    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">O arquivo</h1>
+    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }]} />
+    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">Postagens</h1>
     <p class="mt-3 max-w-xl text-muted-foreground">
-      Tudo o que publicamos. {posts.length} textos entre ensaios, diários de campo e entrevistas.
+      Tudo o que publicamos. {posts.length} textos entre trilhas, cachoeiras e aventuras.
     </p>
 
     <form data-archive-search class="mt-8 flex items-center gap-2 border-b border-border pb-2">
@@ -39,8 +39,8 @@ const tagOptions = tags
       <input
         data-archive-query
         name="q"
-        aria-label="Buscar no arquivo"
-        placeholder="Buscar no arquivo..."
+        aria-label="Buscar postagens"
+        placeholder="Buscar postagens..."
         class="w-full border-0 bg-transparent py-2 outline-none placeholder:text-muted-foreground"
       />
       <button
