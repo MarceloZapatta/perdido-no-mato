@@ -1,0 +1,55 @@
+---
+import { getImage } from "astro:assets";
+
+type GalleryImage = ImageMetadata | { src: ImageMetadata; alt?: string };
+
+const { images = [] } = Astro.props as { images: GalleryImage[] };
+
+const items = await Promise.all(
+  images.map(async (item) => {
+    const src = "width" in item ? item : item.src;
+    const alt = "alt" in item ? (item.alt ?? "") : "";
+    const thumb = await getImage({ src, width: 600, height: 600, fit: "cover", format: "webp", quality: 70 });
+    const full = await getImage({ src, format: "webp", quality: 82 });
+    return { alt, thumb: thumb.src, full: full.src, width: src.width, height: src.height };
+  }),
+);
+---
+
+<div class="pswp-gallery my-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+  {
+    items.map((item) => (
+      <a
+        href={item.full}
+        data-pswp-width={item.width}
+        data-pswp-height={item.height}
+        target="_blank"
+        rel="noreferrer"
+        class="block overflow-hidden rounded-md bg-muted"
+      >
+        <img
+          src={item.thumb}
+          alt={item.alt}
+          loading="lazy"
+          width="600"
+          height="600"
+          class="aspect-square h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  document.querySelectorAll<HTMLElement>(".pswp-gallery").forEach((gallery) => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery,
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+  });
+</script>

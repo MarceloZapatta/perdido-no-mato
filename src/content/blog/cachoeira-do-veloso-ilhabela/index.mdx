@@ -9,6 +9,17 @@ thumbnail: ./cover.jpg
 thumbnailAlt: "A view from the trail."
 ---
 
+import YouTube from "../../../components/YouTube.astro";
+import Gallery from "../../../components/Gallery.astro";
+import cover from "./cover.jpg";
+import imagem1 from "./cachoeira-veloso-1.JPG";
+import imagem2 from "./cachoeira-veloso-2.JPG";
+import imagem3 from "./cachoeira-veloso-3.JPG";
+import imagem4 from "./cachoeira-veloso-4.JPG";
+import imagem5 from "./cachoeira-veloso-5.JPG";
+import imagem6 from "./cachoeira-veloso-6.JPG";
+import imagem7 from "./cachoeira-veloso-7.JPG";
+
 Ilhabela... cheia de surpresas e encantos, dessa vez estaremos explorando uma das várias cachoeiras da ilha a **Cachoeira do Veloso**.
 
 ## Como chegar até a cachoeira?
@@ -56,4 +67,17 @@ Próximo a queda, encontramos uma cobra morta, provavelmente deve ter caído de 
 
 ## Vídeo da cachoeira
 
-LINK DO YOUTUBE
+<YouTube id="5uOjT41sxU0" title="Cachoeira do Veloso - Ilhabela" />
+
+## Confira algumas imagens da cachoeira
+
+<Gallery images={[
+  { src: cover, alt: "Vista da trilha da Cachoeira do Veloso" },
+  { src: imagem1, alt: "Cachoeira do Veloso" },
+  { src: imagem2, alt: "Cachoeira do Veloso" },
+  { src: imagem3, alt: "Cachoeira do Veloso" },
+  { src: imagem4, alt: "Cachoeira do Veloso" },
+  { src: imagem5, alt: "Cachoeira do Veloso" },
+  { src: imagem6, alt: "Cachoeira do Veloso" },
+  { src: imagem7, alt: "Cachoeira do Veloso" },
+]} />

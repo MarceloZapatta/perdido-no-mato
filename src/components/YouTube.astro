@@ -1,0 +1,18 @@
+---
+const { id, title = "Vídeo do YouTube", start } = Astro.props;
+const src = `https://www.youtube-nocookie.com/embed/${id}${start ? `?start=${start}` : ""}`;
+---
+
+<figure class="my-8 overflow-hidden rounded-md bg-muted">
+  <div class="relative aspect-video">
+    <iframe
+      class="absolute inset-0 h-full w-full"
+      src={src}
+      title={title}
+      loading="lazy"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</figure>
