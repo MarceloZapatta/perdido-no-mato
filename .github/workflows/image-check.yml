@@ -1,0 +1,17 @@
+name: Image check
+on: push
+
+permissions:
+  contents: read
+  pull-requests: write # only needed for comment: true
+
+jobs:
+  tinify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tinify-dev/compress-action@v1
+        with:
+          api_key: ${{ secrets.TINIFY_API_KEY }}
+          mode: check
+          comment: true
