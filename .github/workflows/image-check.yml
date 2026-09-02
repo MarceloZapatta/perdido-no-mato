@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tinify-dev/compress-action@v1
+      - uses: Stianlars1/tinify-compress-action@v1
         with:
           api_key: ${{ secrets.TINIFY_API_KEY }}
           mode: check
