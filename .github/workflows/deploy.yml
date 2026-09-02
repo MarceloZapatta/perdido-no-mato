@@ -8,9 +8,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo, commit compressed images, and create a page deployment
+# Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -20,11 +20,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
-      # Commits the compressed images; GITHUB_TOKEN commits don't trigger another deploy
-      - name: Compress images with Tinify
-        uses: namoscato/action-tinify@v1
-        with:
-          api_key: ${{ secrets.TINIFY_API_KEY }}
       - name: Install, build, and upload your site
         uses: withastro/action@v6
         with:
