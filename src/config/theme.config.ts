@@ -53,7 +53,10 @@ export const authors = [
   },
 ];
 
-export const categories = [{ slug: "cachoeiras", name: "Cachoeiras" }];
+export const categories = [
+  { slug: "cachoeiras", name: "Cachoeiras" },
+  { slug: "viagens", name: "Viagens" },
+];
 
 export const tags = [
   { slug: "writing", name: "Escrita" },
