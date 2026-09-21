@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
+import sharp from "sharp";
 
 const WIDTH = 1200;
 const HEIGHT = 630;
@@ -47,7 +48,14 @@ const h = (type, props = {}, children) => ({ type, props: { ...props, children }
 const truncate = (text = "", max) =>
   text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
 
-export async function renderOgImage({ title, description, siteName, coverDataUri }) {
+export async function renderOgImage({
+  title,
+  description,
+  siteName,
+  coverDataUri,
+  format = "jpeg",
+  quality = 78,
+}) {
   const tree = h(
     "div",
     {
@@ -180,5 +188,10 @@ export async function renderOgImage({ title, description, siteName, coverDataUri
 
   const svg = await satori(tree, { width: WIDTH, height: HEIGHT, fonts });
   const resvg = new Resvg(svg, { fitTo: { mode: "width", value: WIDTH } });
-  return resvg.render().asPng();
+  const png = resvg.render().asPng();
+
+  const image = sharp(png);
+  return format === "png"
+    ? image.png({ compressionLevel: 9, palette: true }).toBuffer()
+    : image.jpeg({ quality, mozjpeg: true }).toBuffer();
 }

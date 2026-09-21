@@ -81,7 +81,7 @@ const png = await renderOgImage({ title, description: excerpt, siteName, coverDa
 console.log("OG image rendered, size:", png.length);
 
 console.log("Writing OG image to file...");
-const output = path.resolve(process.argv[3] || `og-preview-${slug}.png`);
+const output = path.resolve(process.argv[3] || `og-preview-${slug}.jpg`);
 fs.writeFileSync(output, png);
 console.log("OG image written to file:", output);
 
