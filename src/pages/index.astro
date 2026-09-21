@@ -2,9 +2,8 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
-import Newsletter from "../components/Newsletter.astro";
 import Icon from "../components/Icon.astro";
-import autumnScene from "../assets/autumn-scene.webp";
+import mainCover from "../assets/cover.jpg";
 import {
   SITE,
   categories,
@@ -30,7 +29,7 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
 >
   <section class="relative -mt-[calc(4rem+2px)] min-h-[calc(100svh-2rem)] overflow-hidden border-b border-border/60 pt-[calc(4rem+2px)] sm:min-h-[760px]">
     <Image
-      src={autumnScene}
+      src={mainCover}
       alt=""
       class="absolute inset-0 h-full w-full object-cover object-center"
       loading="eager"

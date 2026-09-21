@@ -68,7 +68,7 @@ const jsonLd = {
   description={post.seoDescription ?? post.excerpt}
   canonical={canonical}
   ogType="article"
-  ogImage={socialImage?.src}
+  ogImage={`/og/${post.slug}.png`}
   jsonLd={jsonLd}
   flushFooter
 >
