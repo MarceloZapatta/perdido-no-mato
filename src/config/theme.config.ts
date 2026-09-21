@@ -1,7 +1,7 @@
 const siteUrl = (
   import.meta.env.SITE_URL ||
   import.meta.env.PUBLIC_SITE_URL ||
-  "https://perdido-no-mato.vercel.app"
+  "https://perdidonomato.com.br"
 ).replace(/\/$/, "");
 
 export const SITE = {
