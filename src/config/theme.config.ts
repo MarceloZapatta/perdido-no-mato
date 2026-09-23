@@ -1,8 +1,4 @@
-const siteUrl = (
-  import.meta.env.SITE_URL ||
-  import.meta.env.PUBLIC_SITE_URL ||
-  "https://perdidonomato.com.br"
-).replace(/\/$/, "");
+const siteUrl = "https://perdidonomato.com.br";
 
 export const SITE = {
   name: "Perdido no Mato",
