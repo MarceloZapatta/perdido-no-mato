@@ -1,51 +1,19 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { SITE, authors } from "../lib/blog-data.js";
+import { SITE } from "../config/theme.config.ts";
+
+const target = "/sobre";
 ---
 
-<BaseLayout
-  title={`Sobre - ${SITE.name}`}
-  description={`Sobre ${SITE.name}: um diário independente de viagens e aventuras ao ar livre.`}
-  canonical="/about"
->
-  <div class="mx-auto max-w-3xl px-5 py-12">
-    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Sobre" }]} />
-
-    <header class="mt-6">
-      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Sobre</div>
-      <h1 class="mt-2 font-serif text-5xl font-semibold leading-[1.05]">
-        Um blog para interessados em aventuras e eventualmente se perderem no mato.
-      </h1>
-    </header>
-
-    <div class="prose-article mt-10">
-      <p>
-        {SITE.name} começou como um registro de várias histórias, relatos e diversões em viagens. Quero trazer essas experiências de forma autêntica e compartilhá-las com quem se interessa por aventuras ao ar livre.
-      </p>
-      <h2 id="what-we-publish">O que publicamos</h2>
-      <p>
-        Relatos de viagens, trilhas, cachoeiras e lugares que merecem ser descobertos. Dicas práticas para quem gosta de explorar com calma e atenção.
-      </p>
-      <h2 id="who-we-are">Quem sou</h2>
-      <p>Alguém cansado de tecnologia moderna e buscando se reconectar com a natureza.</p>
-    </div>
-
-    <section class="mt-12 border-t border-border pt-10">
-      <h2 class="font-serif text-2xl font-semibold">Colaborador</h2>
-      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          authors.map((author) => (
-            <a href={`/autores/${author.slug}`} class="group flex items-start gap-3">
-              <img src={author.avatar} alt="" width="48" height="48" class="h-12 w-12 rounded-full" />
-              <div>
-                <div class="font-serif text-base font-semibold group-hover:text-primary">{author.name}</div>
-                <div class="mt-1 text-sm text-muted-foreground">{author.bio}</div>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </section>
-  </div>
-</BaseLayout>
+<!doctype html>
+<html lang={SITE.language}>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando para {target}</title>
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(target, SITE.url).href} />
+  </head>
+  <body>
+    <a href={target}>Esta página mudou para <code>{target}</code></a>
+  </body>
+</html>

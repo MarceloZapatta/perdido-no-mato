@@ -13,7 +13,7 @@ export const SITE = {
 export const NAVIGATION = [
   { to: "/", label: "Início" },
   { to: "/blog", label: "Blog" },
-  { to: "/about", label: "Sobre" },
+  { to: "/sobre", label: "Sobre" },
   // { to: "/contact", label: "Contato" },
 ];
 
