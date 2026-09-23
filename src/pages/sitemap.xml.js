@@ -16,7 +16,7 @@ export async function GET() {
       priority: "0.8",
     })),
     ...categories.map((category) => ({
-      path: `/categories/${category.slug}`,
+      path: `/categorias/${category.slug}`,
       changefreq: "weekly",
       priority: "0.6",
     })),
@@ -26,7 +26,7 @@ export async function GET() {
       priority: "0.4",
     })),
     ...authors.map((author) => ({
-      path: `/authors/${author.slug}`,
+      path: `/autores/${author.slug}`,
       changefreq: "monthly",
       priority: "0.5",
     })),

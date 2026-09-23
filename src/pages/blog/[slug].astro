@@ -81,7 +81,7 @@ const jsonLd = {
       items={[
         { label: "Início", to: "/" },
         { label: "Blog", to: "/blog" },
-        ...(category ? [{ label: category.name, to: `/categories/${category.slug}` }] : []),
+        ...(category ? [{ label: category.name, to: `/categorias/${category.slug}` }] : []),
         { label: post.title },
       ]}
     />
@@ -89,7 +89,7 @@ const jsonLd = {
     <header class="mx-auto mt-8 max-w-3xl text-center">
       {
         category && (
-          <a href={`/categories/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
+          <a href={`/categorias/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
             {category.name}
           </a>
         )
@@ -101,7 +101,7 @@ const jsonLd = {
       <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
         {
           author && (
-            <a href={`/authors/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
+            <a href={`/autores/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
               <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
               {author.name}
             </a>
@@ -198,7 +198,7 @@ const jsonLd = {
               <img src={author.avatar} alt="" width="56" height="56" class="h-14 w-14 rounded-full" />
               <div>
                 <div class="text-xs uppercase tracking-wider text-muted-foreground">Escrito por</div>
-                <a href={`/authors/${author.slug}`} class="font-serif text-lg font-semibold hover:text-primary">
+                <a href={`/autores/${author.slug}`} class="font-serif text-lg font-semibold hover:text-primary">
                   {author.name}
                 </a>
                 <p class="mt-1 text-sm text-muted-foreground">{author.bio}</p>

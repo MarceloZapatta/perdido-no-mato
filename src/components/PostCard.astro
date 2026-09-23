@@ -40,7 +40,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
       <div>
         <div class="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
           {category && (
-            <a href={`/categories/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
+            <a href={`/categorias/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
               {category.name}
             </a>
           )}
@@ -55,7 +55,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
         <p class="mt-3 text-muted-foreground">{post.excerpt}</p>
         <div class="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
           {author && (
-            <a href={`/authors/${author.slug}`} class="hover:text-foreground">
+            <a href={`/autores/${author.slug}`} class="hover:text-foreground">
               {author.name}
             </a>
           )}
@@ -136,7 +136,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
       <div class="mt-4">
         <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
           {category && (
-            <a href={`/categories/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
+            <a href={`/categorias/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
               {category.name}
             </a>
           )}

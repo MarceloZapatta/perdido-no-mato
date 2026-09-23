@@ -1,46 +1,23 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import PostCard from "../../components/PostCard.astro";
-import Sidebar from "../../components/Sidebar.astro";
-import { SITE, categories, postsByCategory } from "../../lib/blog-data.js";
+import { SITE, categories } from "../../config/theme.config.ts";
 
 export function getStaticPaths() {
-  return categories.map((category) => ({ params: { slug: category.slug }, props: { category } }));
+  return categories.map((category) => ({ params: { slug: category.slug } }));
 }
 
-const { category } = Astro.props;
-const list = await postsByCategory(category.slug);
+const target = `/categorias/${Astro.params.slug}`;
 ---
 
-<BaseLayout
-  title={`${category.name} - ${SITE.name}`}
-  description={`Textos sobre ${category.name} em ${SITE.name}.`}
-  canonical={`/categories/${category.slug}`}
->
-  <div class="mx-auto max-w-6xl px-5 py-12">
-    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Categorias" }, { label: category.name }]} />
-    <header class="mt-6 border-b border-border pb-8">
-      <div class="text-xs font-medium uppercase tracking-[0.2em] text-primary">Categoria</div>
-      <h1 class="mt-2 font-serif text-4xl font-semibold sm:text-5xl">{category.name}</h1>
-      <p class="mt-3 text-muted-foreground">
-        {list.length} {list.length === 1 ? "texto" : "textos"} nesta seção.
-      </p>
-    </header>
-
-    <div class="grid gap-12 lg:grid-cols-[1fr_280px]">
-      <div>
-        {
-          list.length === 0 ? (
-            <div class="mt-12 rounded-md border border-dashed border-border py-20 text-center">
-              <p class="text-muted-foreground">Ainda não há textos nesta categoria.</p>
-            </div>
-          ) : (
-            list.map((post) => <PostCard post={post} variant="list" />)
-          )
-        }
-      </div>
-      <div class="pt-8"><Sidebar /></div>
-    </div>
-  </div>
-</BaseLayout>
+<!doctype html>
+<html lang={SITE.language}>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando para {target}</title>
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(target, SITE.url).href} />
+  </head>
+  <body>
+    <a href={target}>Esta página mudou para <code>{target}</code></a>
+  </body>
+</html>
