@@ -27,7 +27,7 @@ const author = authors[0];
       {
         categories.map((category) => (
           <li>
-            <a href={`/categorias/${category.slug}`} class="text-foreground/80 hover:text-primary">
+            <a href={`/categorias/${category.slug}/`} class="text-foreground/80 hover:text-primary">
               {category.name}
             </a>
           </li>
@@ -56,7 +56,7 @@ const author = authors[0];
       {
         tags.map((tag) => (
           <a
-            href={`/tags/${tag.slug}`}
+            href={`/tags/${tag.slug}/`}
             class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary"
           >
             {tag.name}

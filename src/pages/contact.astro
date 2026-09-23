@@ -6,7 +6,7 @@ import { SITE } from "../lib/blog-data.js";
 import { CONTACT, FORMS } from "../config/theme.config.ts";
 
 const hasContactEndpoint = Boolean(FORMS.contact.action);
-const contactAction = hasContactEndpoint ? FORMS.contact.action : "/contact";
+const contactAction = hasContactEndpoint ? FORMS.contact.action : "/contact/";
 const contactMethod = hasContactEndpoint ? FORMS.contact.method : "get";
 const contactEnctype = hasContactEndpoint ? FORMS.contact.enctype : undefined;
 ---
@@ -14,7 +14,7 @@ const contactEnctype = hasContactEndpoint ? FORMS.contact.enctype : undefined;
 <BaseLayout
   title={`Contato - ${SITE.name}`}
   description={`Entre em contato com ${SITE.name}.`}
-  canonical="/contact"
+  canonical="/contact/"
 >
   <div class="mx-auto max-w-3xl px-5 py-12">
     <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Contato" }]} />

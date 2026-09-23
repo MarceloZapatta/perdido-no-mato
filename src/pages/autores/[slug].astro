@@ -15,7 +15,7 @@ const list = await postsByAuthor(author.slug);
 <BaseLayout
   title={`${author.name} - ${SITE.name}`}
   description={author.bio}
-  canonical={`/autores/${author.slug}`}
+  canonical={`/autores/${author.slug}/`}
   ogImage={author.avatar}
 >
   <div class="mx-auto max-w-4xl px-5 py-12">

@@ -6,27 +6,27 @@ export async function GET() {
   const posts = await sortedPosts();
   const entries = [
     { path: "/", changefreq: "weekly", priority: "1.0" },
-    { path: "/blog", changefreq: "daily", priority: "0.9" },
-    { path: "/sobre", changefreq: "monthly", priority: "0.6" },
-    { path: "/contact", changefreq: "monthly", priority: "0.5" },
+    { path: "/blog/", changefreq: "daily", priority: "0.9" },
+    { path: "/sobre/", changefreq: "monthly", priority: "0.6" },
+    { path: "/contact/", changefreq: "monthly", priority: "0.5" },
     ...posts.map((post) => ({
-      path: `/blog/${post.slug}`,
+      path: `/blog/${post.slug}/`,
       lastmod: post.updated || post.date,
       changefreq: "monthly",
       priority: "0.8",
     })),
     ...categories.map((category) => ({
-      path: `/categorias/${category.slug}`,
+      path: `/categorias/${category.slug}/`,
       changefreq: "weekly",
       priority: "0.6",
     })),
     ...tags.map((tag) => ({
-      path: `/tags/${tag.slug}`,
+      path: `/tags/${tag.slug}/`,
       changefreq: "weekly",
       priority: "0.4",
     })),
     ...authors.map((author) => ({
-      path: `/autores/${author.slug}`,
+      path: `/autores/${author.slug}/`,
       changefreq: "monthly",
       priority: "0.5",
     })),

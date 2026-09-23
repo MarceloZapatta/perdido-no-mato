@@ -15,7 +15,7 @@ const list = await postsByTag(tag.slug);
 <BaseLayout
   title={`#${tag.name} - ${SITE.name}`}
   description={`Todos os textos marcados com ${tag.name}.`}
-  canonical={`/tags/${tag.slug}`}
+  canonical={`/tags/${tag.slug}/`}
 >
   <div class="mx-auto max-w-4xl px-5 py-12">
     <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Tags" }, { label: `#${tag.name}` }]} />

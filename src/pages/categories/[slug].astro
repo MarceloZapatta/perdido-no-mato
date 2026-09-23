@@ -5,7 +5,7 @@ export function getStaticPaths() {
   return categories.map((category) => ({ params: { slug: category.slug } }));
 }
 
-const target = `/categorias/${Astro.params.slug}`;
+const target = `/categorias/${Astro.params.slug}/`;
 ---
 
 <!doctype html>

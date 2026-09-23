@@ -7,7 +7,7 @@ const esc = (value) =>
 
 export async function GET() {
   const items = (await sortedPosts()).map((post) => {
-    const link = `${BASE_URL}/blog/${post.slug}`;
+    const link = `${BASE_URL}/blog/${post.slug}/`;
     const author = getAuthor(post.author);
     return [
       "    <item>",

@@ -28,7 +28,7 @@ const iconClass = isHome
       {
         NAVIGATION.map((item) => {
           const exact = item.to === "/";
-          const active = exact ? current === "/" : current.startsWith(item.to);
+          const active = exact ? current === "/" : current.startsWith(item.to.replace(/\/$/, ""));
           return (
             <a
               href={item.to}
@@ -84,7 +84,7 @@ const iconClass = isHome
   </div>
 
   <div id="site-search" data-search-panel class="border-t border-border/60 bg-background text-foreground" hidden>
-    <form action="/blog" method="get" class="mx-auto max-w-6xl px-5 py-3">
+    <form action="/blog/" method="get" class="mx-auto max-w-6xl px-5 py-3">
       <input
         data-search-input
         name="q"
@@ -100,7 +100,7 @@ const iconClass = isHome
       {
         NAVIGATION.map((item) => {
           const exact = item.to === "/";
-          const active = exact ? current === "/" : current.startsWith(item.to);
+          const active = exact ? current === "/" : current.startsWith(item.to.replace(/\/$/, ""));
           return (
             <a
               href={item.to}

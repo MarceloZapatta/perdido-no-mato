@@ -37,7 +37,7 @@ const toc = headings
   }));
 const related = await relatedPosts(post);
 const { prev, next } = await adjacentPosts(post);
-const canonical = post.canonical ?? `/blog/${post.slug}`;
+const canonical = post.canonical ?? `/blog/${post.slug}/`;
 const canonicalUrl = new URL(canonical, SITE.url).toString();
 const socialImage = post.thumbnail
   ? await getImage({
@@ -80,8 +80,8 @@ const jsonLd = {
     <Breadcrumbs
       items={[
         { label: "Início", to: "/" },
-        { label: "Blog", to: "/blog" },
-        ...(category ? [{ label: category.name, to: `/categorias/${category.slug}` }] : []),
+        { label: "Blog", to: "/blog/" },
+        ...(category ? [{ label: category.name, to: `/categorias/${category.slug}/` }] : []),
         { label: post.title },
       ]}
     />
@@ -89,7 +89,7 @@ const jsonLd = {
     <header class="mx-auto mt-8 max-w-3xl text-center">
       {
         category && (
-          <a href={`/categorias/${category.slug}`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
+          <a href={`/categorias/${category.slug}/`} class="text-xs font-medium uppercase tracking-[0.2em] text-primary hover:underline">
             {category.name}
           </a>
         )
@@ -101,7 +101,7 @@ const jsonLd = {
       <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
         {
           author && (
-            <a href={`/autores/${author.slug}`} class="flex items-center gap-2 hover:text-foreground">
+            <a href={`/autores/${author.slug}/`} class="flex items-center gap-2 hover:text-foreground">
               <img src={author.avatar} alt="" width="28" height="28" class="h-7 w-7 rounded-full" />
               {author.name}
             </a>
@@ -173,7 +173,7 @@ const jsonLd = {
             post.tags.map((tag) => {
               const item = getTag(tag);
               return (
-                <a href={`/tags/${tag}`} class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary">
+                <a href={`/tags/${tag}/`} class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary hover:text-primary">
                   #{item?.name ?? tag}
                 </a>
               );
@@ -198,7 +198,7 @@ const jsonLd = {
               <img src={author.avatar} alt="" width="56" height="56" class="h-14 w-14 rounded-full" />
               <div>
                 <div class="text-xs uppercase tracking-wider text-muted-foreground">Escrito por</div>
-                <a href={`/autores/${author.slug}`} class="font-serif text-lg font-semibold hover:text-primary">
+                <a href={`/autores/${author.slug}/`} class="font-serif text-lg font-semibold hover:text-primary">
                   {author.name}
                 </a>
                 <p class="mt-1 text-sm text-muted-foreground">{author.bio}</p>
@@ -210,7 +210,7 @@ const jsonLd = {
         <nav class="mt-12 grid gap-4 border-t border-border pt-8 sm:grid-cols-2">
           {
             prev ? (
-              <a href={`/blog/${prev.slug}`} class="group block">
+              <a href={`/blog/${prev.slug}/`} class="group block">
                 <div class="flex items-center gap-1 text-xs text-muted-foreground"><Icon name="arrow-left" class="h-3 w-3" /> Anterior</div>
                 <div class="mt-1 font-serif text-base font-semibold leading-snug group-hover:text-primary">{prev.title}</div>
               </a>
@@ -220,7 +220,7 @@ const jsonLd = {
           }
           {
             next ? (
-              <a href={`/blog/${next.slug}`} class="group block sm:text-right">
+              <a href={`/blog/${next.slug}/`} class="group block sm:text-right">
                 <div class="flex items-center gap-1 text-xs text-muted-foreground sm:justify-end">Próximo <Icon name="arrow-right" class="h-3 w-3" /></div>
                 <div class="mt-1 font-serif text-base font-semibold leading-snug group-hover:text-primary">{next.title}</div>
               </a>

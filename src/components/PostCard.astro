@@ -12,7 +12,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
 {
   variant === "compact" ? (
     <a
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.slug}/`}
       class="group block"
       data-post-card
       data-category={post.category}
@@ -40,14 +40,14 @@ const thumbnailIsString = typeof post.thumbnail === "string";
       <div>
         <div class="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
           {category && (
-            <a href={`/categorias/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
+            <a href={`/categorias/${category.slug}/`} class="inline-flex min-h-9 items-center hover:text-foreground">
               {category.name}
             </a>
           )}
           <span>&middot;</span>
           <time datetime={post.date}>{formatDate(post.date)}</time>
         </div>
-        <a href={`/blog/${post.slug}`} class="mt-1 block py-1">
+        <a href={`/blog/${post.slug}/`} class="mt-1 block py-1">
           <h2 class="font-serif text-2xl font-semibold leading-tight group-hover:text-primary sm:text-3xl">
             {post.title}
           </h2>
@@ -55,7 +55,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
         <p class="mt-3 text-muted-foreground">{post.excerpt}</p>
         <div class="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
           {author && (
-            <a href={`/autores/${author.slug}`} class="hover:text-foreground">
+            <a href={`/autores/${author.slug}/`} class="hover:text-foreground">
               {author.name}
             </a>
           )}
@@ -64,7 +64,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
         </div>
       </div>
       {post.thumbnail && (
-        <a href={`/blog/${post.slug}`} class="block" aria-label={`Read ${post.title}`}>
+        <a href={`/blog/${post.slug}/`} class="block" aria-label={`Read ${post.title}`}>
           <div class="aspect-[4/3] overflow-hidden rounded-md bg-muted sm:aspect-square">
             {
               thumbnailIsString ? (
@@ -104,7 +104,7 @@ const thumbnailIsString = typeof post.thumbnail === "string";
       hidden={hidden}
     >
       {post.thumbnail && (
-        <a href={`/blog/${post.slug}`} class="block" aria-label={`Read ${post.title}`}>
+        <a href={`/blog/${post.slug}/`} class="block" aria-label={`Read ${post.title}`}>
           <div class="aspect-[16/10] overflow-hidden rounded-md bg-muted">
             {
               thumbnailIsString ? (
@@ -136,14 +136,14 @@ const thumbnailIsString = typeof post.thumbnail === "string";
       <div class="mt-4">
         <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
           {category && (
-            <a href={`/categorias/${category.slug}`} class="inline-flex min-h-9 items-center hover:text-foreground">
+            <a href={`/categorias/${category.slug}/`} class="inline-flex min-h-9 items-center hover:text-foreground">
               {category.name}
             </a>
           )}
           <span>&middot;</span>
           <time datetime={post.date}>{formatDate(post.date)}</time>
         </div>
-        <a href={`/blog/${post.slug}`} class="mt-1 block py-1">
+        <a href={`/blog/${post.slug}/`} class="mt-1 block py-1">
           <h3 class="font-serif text-xl font-semibold leading-snug group-hover:text-primary">
             {post.title}
           </h3>

@@ -69,10 +69,10 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
     <div class="mx-auto max-w-6xl px-5 py-16">
       <div class="mb-6 flex items-center justify-between">
         <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Destaque</div>
-        <a href="/blog" class="text-xs text-muted-foreground hover:text-foreground">Todos os textos &rarr;</a>
+        <a href="/blog/" class="text-xs text-muted-foreground hover:text-foreground">Todos os textos &rarr;</a>
       </div>
       <article class="grid gap-10 lg:grid-cols-2">
-        <a href={`/blog/${featured.slug}`} class="group block" aria-label={`Ler ${featured.title}`}>
+        <a href={`/blog/${featured.slug}/`} class="group block" aria-label={`Ler ${featured.title}`}>
           <div class="aspect-[4/3] overflow-hidden rounded-md bg-muted">
             {
               featured.thumbnail && (
@@ -94,7 +94,7 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
           <div class="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
             {
               featuredCategory && (
-                <a href={`/categorias/${featuredCategory.slug}`} class="inline-flex min-h-9 items-center text-primary hover:underline">
+                <a href={`/categorias/${featuredCategory.slug}/`} class="inline-flex min-h-9 items-center text-primary hover:underline">
                   {featuredCategory.name}
                 </a>
               )
@@ -102,7 +102,7 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
             <span>&middot;</span>
             <time datetime={featured.date}>{formatDate(featured.date)}</time>
           </div>
-          <a href={`/blog/${featured.slug}`} class="mt-2 block py-1">
+          <a href={`/blog/${featured.slug}/`} class="mt-2 block py-1">
             <h2 class="font-serif text-3xl font-semibold leading-tight hover:text-primary sm:text-4xl">
               {featured.title}
             </h2>
@@ -119,14 +119,14 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
                     height="28"
                     class="h-7 w-7 rounded-full"
                   />
-                  <a href={`/autores/${featuredAuthor.slug}`} class="hover:text-foreground">{featuredAuthor.name}</a>
+                  <a href={`/autores/${featuredAuthor.slug}/`} class="hover:text-foreground">{featuredAuthor.name}</a>
                   <span>&middot;</span>
                 </>
               )
             }
             <span>{featured.readingTime} min de leitura</span>
           </div>
-          <a href={`/blog/${featured.slug}`} class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+          <a href={`/blog/${featured.slug}/`} class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
             Ler o texto <Icon name="arrow-right" class="h-3.5 w-3.5" />
           </a>
         </div>
@@ -168,7 +168,7 @@ const latest = all.length > 1 ? all.filter((post) => post.slug !== featured.slug
     </div>
 
     <div class="mt-12 text-center">
-      <a href="/blog" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted">
+      <a href="/blog/" class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted">
         Ver as publicações <Icon name="arrow-right" class="h-3.5 w-3.5" />
       </a>
     </div>

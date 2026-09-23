@@ -25,10 +25,10 @@ const tagOptions = tags
 <BaseLayout
   title={`Postagens - ${SITE.name}`}
   description="Todos os ensaios, diários de campo e entrevistas publicados. Busque e filtre por categoria ou tag."
-  canonical="/blog"
+  canonical="/blog/"
 >
   <div class="mx-auto max-w-4xl px-5 py-12" data-archive>
-    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog" }]} />
+    <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Blog", to: "/blog/" }]} />
     <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">Postagens</h1>
     <p class="mt-3 max-w-xl text-muted-foreground">
       Tudo o que publicamos. {posts.length} textos entre trilhas, cachoeiras e aventuras.
@@ -64,14 +64,14 @@ const tagOptions = tags
         </summary>
         {/* Links, so aria-current marks the selection - aria-pressed is button-only. */}
         <nav class="filter-popover" aria-label="Filtrar por categoria">
-          <a href="/blog" class="facet" data-filter="cat" data-value="" aria-current="true">
+          <a href="/blog/" class="facet" data-filter="cat" data-value="" aria-current="true">
             <span class="facet-label">Todas as categorias</span>
             <span class="facet-count" data-facet-count>{posts.length}</span>
           </a>
           {
             categoryOptions.map((category) => (
               <a
-                href={`/categorias/${category.slug}`}
+                href={`/categorias/${category.slug}/`}
                 class="facet"
                 data-filter="cat"
                 data-value={category.slug}
@@ -93,13 +93,13 @@ const tagOptions = tags
           <Icon name="chevron-down" class="h-3 w-3 transition-transform group-open:rotate-180" />
         </summary>
         <nav class="filter-popover" aria-label="Filtrar por tag">
-          <a href="/blog" class="facet" data-filter="tag" data-value="" aria-current="true">
+          <a href="/blog/" class="facet" data-filter="tag" data-value="" aria-current="true">
             <span class="facet-label">Qualquer tag</span>
             <span class="facet-count" data-facet-count>{posts.length}</span>
           </a>
           {
             tagOptions.map((tag) => (
-              <a href={`/tags/${tag.slug}`} class="facet" data-filter="tag" data-value={tag.slug}>
+              <a href={`/tags/${tag.slug}/`} class="facet" data-filter="tag" data-value={tag.slug}>
                 <span class="facet-label">#{tag.name}</span>
                 <span class="facet-count" data-facet-count>
                   {tag.count}
@@ -191,7 +191,7 @@ const tagOptions = tags
       if (state.tag) params.set("tag", state.tag);
       if (state.page > 1) params.set("page", String(state.page));
       const query = params.toString();
-      history.pushState(state, "", query ? `/blog?${query}` : "/blog");
+      history.pushState(state, "", query ? `/blog/?${query}` : "/blog/");
     };
 
     /* Each option is counted against the *other* active filters, so a row says what

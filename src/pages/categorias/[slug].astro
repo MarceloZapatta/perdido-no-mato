@@ -16,7 +16,7 @@ const list = await postsByCategory(category.slug);
 <BaseLayout
   title={`${category.name} - ${SITE.name}`}
   description={`Textos sobre ${category.name} em ${SITE.name}.`}
-  canonical={`/categorias/${category.slug}`}
+  canonical={`/categorias/${category.slug}/`}
 >
   <div class="mx-auto max-w-6xl px-5 py-12">
     <Breadcrumbs items={[{ label: "Início", to: "/" }, { label: "Categorias" }, { label: category.name }]} />

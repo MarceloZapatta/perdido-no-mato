@@ -3,7 +3,7 @@ import { FORMS } from "../config/theme.config.ts";
 
 const { compact = false } = Astro.props;
 const hasNewsletterEndpoint = Boolean(FORMS.newsletter.action);
-const newsletterAction = hasNewsletterEndpoint ? FORMS.newsletter.action : "/contact";
+const newsletterAction = hasNewsletterEndpoint ? FORMS.newsletter.action : "/contact/";
 const newsletterMethod = hasNewsletterEndpoint ? FORMS.newsletter.method : "get";
 const newsletterEnctype = hasNewsletterEndpoint ? FORMS.newsletter.enctype : undefined;
 ---
